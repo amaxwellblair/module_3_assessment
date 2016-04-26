@@ -1,5 +1,15 @@
-<% @search.each do |result| %>
-  <p>
-    <%= result.name %>
-  </p>
+<h1> <%= "#{@search.length} items" %> </h1>
+
+<% if @search.empty? %>
+  <p>No search results found</p>
+<% else %>
+  <% @search.each do |result| %>
+    <p><%= image_tag result.image %></p>
+    <p><%= "SKU: #{result.sku}" %></p>
+    <p><%= "Name: #{result.name}" %></p>
+    <p><%= "Sale price: #{result.salePrice}" %></p>
+    <p><%= "Customer average review: #{result.customerReviewAverage || "null"}" %></p>
+    <p><%= "Short description: #{result.shortDescription}" %></p>
+    <br>
+  <% end %>
 <% end %>

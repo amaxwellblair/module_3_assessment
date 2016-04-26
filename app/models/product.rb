@@ -6,7 +6,9 @@ class Product < OpenStruct
 
   def self.find_by(args)
     search = args[:search]
-    return service.get_products(search)
+    service.get_products(search).map do |product|
+      Product.new(product)
+    end
   end
 
 end
