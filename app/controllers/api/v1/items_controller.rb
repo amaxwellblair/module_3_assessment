@@ -3,11 +3,13 @@ module Api
     class ItemsController < ApiController
       respond_to :json
       def index
-        respond_with Item.all, each_serializer: ItemSerializer
+        respond_with Item.all
+        # , each_serializer: ItemSerializer
       end
 
       def show
-        respond_with Item.find_by(id: params[:id]), serializer: ItemSerializer
+        respond_with Item.find_by(id: params[:id])
+        # , serializer: ItemSerializer
       end
 
       def destroy
@@ -17,7 +19,8 @@ module Api
 
       def create
         @item = Item.create(item_params)
-        respond_with(@item, status: 201, serializer: ItemSerializer)
+        respond_with(@item, status: 201)
+        # , serializer: ItemSerializer
       end
 
       private
