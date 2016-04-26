@@ -19,6 +19,18 @@ describe "item api" do
   end
 
   it "returns a specific item" do
+    item = Item.create(name: "bacon", description: "best kind of bacon", image_url: "www.whocares.com")
+    Item.create(name: "not bacon", description: "why eat it", image_url: "www.whocares.com")
 
+    get "/api/v1/items/#{item.id}.json"
+
+
+    expect(response).to be_success
+
+    item = JSON.parse(response.body)
+
+    expect(item["name"]).to eq("bacon")
+    # expect(item["created_at"]).to eq(nil)
+    # expect(item["updated_at"]).to eq(nil)
   end
 end
