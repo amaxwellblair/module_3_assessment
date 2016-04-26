@@ -12,7 +12,7 @@ class BestBuyService
   def get_products(search)
     if search.split.length > 1
       search_term = search.split.map do |term|
-        "longDescription=" + term
+        "longDescription=" + term + "*"
       end.join("&")
     else
       search_term = "search=#{search}"
