@@ -1,11 +1,12 @@
 class Product < OpenStruct
 
-  def service
+  def self.service
     BestBuyService.new
   end
 
-  def find_by()
-
+  def self.find_by(args)
+    search = args[:search]
+    return service.get_products(search)
   end
 
 end

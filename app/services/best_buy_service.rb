@@ -9,13 +9,15 @@ class BestBuyService
     end
   end
 
-  def get_thing
-    connect.get do |req|
-      req.url '/products(search=oven&search=stainless&search=steel)'
+  def get_products(search)
+    resp = connect.get do |req|
+      req.url "/v1/products(search=#{search})"
       req.params['apiKey'] = ENV['BEST_BUY_KEY']
       req.params['format'] = 'json'
-      req.params['show'] = ['sku','name','salePrice']
+      req.params['show'] = ['sku','name','salePrice', 'customerReviewAverage', 'shortDescription', 'image']
     end
+
+    return parse(resp.body)
   end
 
   private
