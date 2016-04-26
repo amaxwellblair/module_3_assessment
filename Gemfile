@@ -13,6 +13,7 @@ gem "therubyracer"
 gem "less-rails-bootstrap"
 gem 'figaro'
 gem 'faraday'
+gem "responders"
 
 
 group :development do

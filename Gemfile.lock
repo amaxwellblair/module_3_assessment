@@ -116,6 +116,8 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (11.1.2)
     ref (2.0.0)
+    responders (1.1.2)
+      railties (>= 3.2, < 4.2)
     rspec-core (3.4.4)
       rspec-support (~> 3.4.0)
     rspec-expectations (3.4.0)
@@ -193,6 +195,7 @@ DEPENDENCIES
   less-rails-bootstrap
   pry
   rails (= 4.1.4)
+  responders
   rspec-rails (~> 3.0)
   sass-rails (~> 4.0.3)
   shoulda-matchers (~> 3.1)
