@@ -12,6 +12,7 @@ gem "faker"
 gem "therubyracer"
 gem "less-rails-bootstrap"
 gem 'figaro'
+gem 'faraday'
 
 
 group :development do
@@ -25,4 +26,6 @@ group :development, :test do
   gem "pry", :require => "pry"
   gem 'database_cleaner'
   gem 'launchy'
+  gem "vcr"
+  gem "webmock"
 end
